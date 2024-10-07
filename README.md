@@ -1,6 +1,11 @@
 # Argocd_Installation
 Argocd_Installation
 
+Helm command to install ArgoCD;
+
+helm install -f values.yaml banct-argo-cd argo/argo-cd --version 7.6.8 -n argo-cd
+
+
 Changes done on values.yaml;
 
 1) global:
