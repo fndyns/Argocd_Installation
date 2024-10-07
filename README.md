@@ -39,7 +39,7 @@ Changes done on values.yaml;
       alb.ingress.kubernetes.io/backend-protocol: HTTPS
       alb.ingress.kubernetes.io/target-type: ip  # Use IP mode
       alb.ingress.kubernetes.io/inbound-cidrs: 0.0.0.0/0  # Allow traffic from anywhere (adjust as needed)
-      alb.ingress.kubernetfalsees.io/subnets: subnet-0908afd6fb1f571e2,subnet-035cc02230aee60d8
+      alb.ingress.kubernetfalsees.io/subnets: subnet-xx,subnet-xx
       alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-west-2:xxxxxxxxxxxxx:certificate/xxxxxx-xxxxx-xxx-xxx-xxxx
     ingressClassName: "alb"
 
