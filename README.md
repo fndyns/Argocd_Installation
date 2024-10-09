@@ -93,7 +93,7 @@ WARN[0000] Failed to invoke grpc call. Use flag --grpc-web in grpc calls. To avo
 'admin:login' logged in successfully
 Context 'argocd.banct-app.com' updated
 dell@dell-Latitude-3420:~$ argocd account generate-token --account admin --grpc-web
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcmdvY2QiLCJzdWIiOiJhZG1pbjphcGlLZXkiLCJuYmYiOjE3Mjg0ODA4OTksImlhdCI6MTcyODQ4MDg5OSwianRpIjoiZGM2NmE0N2EtYWMxNS00MDE0LTg0ODEtN2JlMmQwNjk5N2NiIn0.-80GRKVklo4GNkx6_MoIESXix85tqa-TMG6puIf5-b0
+eyJhbxxxx80GRxxxx85tqa-TMG6puIf5-b0
 
 
 
