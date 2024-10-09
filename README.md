@@ -96,6 +96,12 @@ dell@dell-Latitude-3420:~$ argocd account generate-token --account admin --grpc-
 eyJhbxxxx80GRxxxx85tqa-TMG6puIf5-b0
 
 
+6) Argo web password unu öğrenmek için
+
+dell@dell-Latitude-3420:~$ kubectl get secret -n argo-cd argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+xxxx-xx
+
+
 
 dell@dell-Latitude-3420:~/Downloads/argo-cd-7.6.8/argo-cd$ kubectl get secret -n argo-cd argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 nxxxxxxxxxxxx
