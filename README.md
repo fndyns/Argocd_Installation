@@ -102,6 +102,26 @@ dell@dell-Latitude-3420:~$ kubectl get secret -n argo-cd argocd-initial-admin-se
 xxxx-xx
 
 
+7) Then we needed to add repo and create app "northdraw-svc" on argocd. To do that, we first needed to create personal access token on gitlab to use it in below command as glpat-xxx
+
+
+dell@dell-Latitude-3420:~/Downloads/argo-cd-7.6.8/argo-cd$ argocd repo add https://gitlab.com/b5346/b-devops.git \
+    --username melike.ozen@b.com \
+    --password glpat-xxx
+Repository 'https://gitlab.com/bxx/b-devops.git' added
+&&&&&&&&&&
+
+dell@dell-Latitude-3420:~/Downloads/argo-cd-7.6.8/argo-cd$ argocd app create northrow-svc \
+    --repo https://gitlab.com/bxx/b-devops.git \
+    --path helm-deployment/api-helm \
+    --dest-server https://kubernetes.default.svc \
+    --dest-namespace default \
+    --revision main \
+    --sync-policy automated
+application 'northrow-svc' created
+
+8) Sonra argocd stage eklemek için gitlab ci yaml ı güncelleyebiliriz.
+
 
 dell@dell-Latitude-3420:~/Downloads/argo-cd-7.6.8/argo-cd$ kubectl get secret -n argo-cd argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 nxxxxxxxxxxxx
