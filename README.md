@@ -122,6 +122,41 @@ application 'northrow-svc' created
 
 8) Sonra argocd stage eklemek için gitlab ci yaml ı güncelleyebiliriz.
 
+App sync i lokalde test ettim
+
+dell@dell-Latitude-3420:~/Downloads/argo-cd-7.6.8/argo-cd$ argocd app sync banct-northrow-integration-svc --auth-token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcmdvY2QiLCJzdWIiOiJhZG1pbjphcGlLZXkiLCJuYmYiOjE3Mjg1ODc4NDksImlhdCI6MTcyODU4Nzg0OSwianRpIjoiZTg5OTdmZDEtYTEwOC00M2UwLThlYjgtNTVjMzcwOTJmYWIyIn0.Q4bbrnUZK_fkTCWsz2taYdNN1GnoP2aYrjXhXPsKKEc --grpc-web --insecure
+TIMESTAMP                  GROUP        KIND   NAMESPACE                  NAME                      STATUS   HEALTH         HOOK  MESSAGE
+2024-10-11T01:30:43+03:00            Service     default  banct-northrow-integration-svc-service    Synced  Healthy               
+2024-10-11T01:30:43+03:00   apps  Deployment     default  banct-northrow-integration-svc-svc        Synced  Degraded              
+2024-10-11T01:30:44+03:00   apps  Deployment     default  banct-northrow-integration-svc-svc        Synced  Degraded              deployment.apps/banct-northrow-integration-svc-svc unchanged
+2024-10-11T01:30:44+03:00            Service     default  banct-northrow-integration-svc-service    Synced  Healthy               service/banct-northrow-integration-svc-service unchanged
+
+Name:               argo-cd/banct-northrow-integration-svc
+Project:            default
+Server:             https://kubernetes.default.svc
+Namespace:          default
+URL:                https://argocd.banct-app.com/applications/banct-northrow-integration-svc
+Source:
+- Repo:             https://gitlab.com/b5346/banct-devops.git
+  Target:           main
+  Path:             helm-deployment/api-helm
+SyncWindow:         Sync Allowed
+Sync Policy:        Automated
+Sync Status:        Synced to main (abb1661)
+Health Status:      Degraded
+
+Operation:          Sync
+Sync Revision:      abb16617a31f0ea9d012d5904b3f2923da9f7569
+Phase:              Succeeded
+Start:              2024-10-11 01:30:43 +0300 +03
+Finished:           2024-10-11 01:30:44 +0300 +03
+Duration:           1s
+Message:            successfully synced (all tasks run)
+
+GROUP  KIND        NAMESPACE  NAME                                    STATUS  HEALTH    HOOK  MESSAGE
+       Service     default    banct-northrow-integration-svc-service  Synced  Healthy         service/banct-northrow-integration-svc-service unchanged
+apps   Deployment  default    banct-northrow-integration-svc-svc      Synced  Degraded        deployment.apps/banct-northrow-integration-svc-svc unchanged
+
 
 dell@dell-Latitude-3420:~/Downloads/argo-cd-7.6.8/argo-cd$ kubectl get secret -n argo-cd argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 nxxxxxxxxxxxx
